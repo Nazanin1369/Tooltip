@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+<form action="clickServlet"  method="post">
+    <table>
+        <tr>
+            <td>
+                <input type="checkbox" id="ch1" />
+            </td>
+            <td>
+                <a title="ID:983709nazi" id="link">Nazanin Delam</a>
+            </td>
+            <td>
+                <input type="text" name="tbox" id="tboxId" style="display: none;"/>
+
+            </td>
+            <td>
+                <button type="submit" id="btn1">Click to save</Button>
+            </td>
+        </tr>
+    </table>
+    </form>
+    <script>
+	  $(document).ready(function(){
+		    var ch1, txtbox, link, getVal;
+		    ch1 = $("#ch1");
+		    txtbox = $("#tboxId");
+		    link   = $("#link");
+	    	ch1.click(function(e){
+	    		var isChecked;
+	    		isChecked = $(e.target).is(':checked');
+	    		if(isChecked)
+	    			txtbox.show();
+	    		else
+	    			txtbox.hide();
+	    	});
+	    	 getVal = function () { 
+	         	txtbox.val(link.attr('title'));
+	         }
+	    });
+    
+	 
+ 
+    </script>
+</body>
+</html>
+
